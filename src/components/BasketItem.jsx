@@ -1,4 +1,4 @@
-function BasketItem {
+function BasketItem(props){
     const {
         id,
         name,
