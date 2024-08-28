@@ -15,16 +15,20 @@ function Shop() {
     const [alertName, setAlertName] = useState('');
 
     const addToBasket = (item) => {
+
+        //checking if it was in out basket
         const itemIndex = order.findIndex(
             (orderItem) => orderItem.id === item.id
         );
 
+        //if we dont have then add , else add quantity
         if (itemIndex < 0) {
             const newItem = {
                 ...item,
                 quantity: 1,
             };
             setOrder([...order, newItem]);
+
         } else {
             const newOrder = order.map((orderItem, index) => {
                 if (index === itemIndex) {
@@ -42,6 +46,8 @@ function Shop() {
         setAlertName(item.name);
     };
 
+
+    //filter method return elements  that are not the same as chosen elem
     const removeFromBasket = (itemId) => {
         const newOrder = order.filter((el) => el.id !== itemId);
         setOrder(newOrder);
