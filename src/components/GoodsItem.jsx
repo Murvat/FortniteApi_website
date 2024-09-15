@@ -36,6 +36,7 @@ function GoodsItem(props) {
             </div>
         </div>
     );
+    //
 }
 
 export { GoodsItem };
